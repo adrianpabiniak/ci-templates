@@ -5,30 +5,13 @@ name: CI Start Stop
 # Controls when the workflow will run
 
 on:
-  workflow_dispatch:
+  workflow_call:
     inputs:
       ENV:
         description: 'Anypoint environment target'
         required: true
-        type: choice
-        options: [DEV, QAS, PRD]
-      APP_NAME:
-        description: 'Application name in Runtime Manager'
-        required: true
-      TARGET:
-        description: 'Deployment target'
-        required: true
-        type: choice
-        options: [EKS, CLOUDHUB]
-      STATE:
-        description: 'Start or Stop the application'
-        required: true
-        type: choice
-        options: [START, STOP]
-      REGION:
-        description: 'Region of the API'
-        required: true
-        type: choice
+        type: string
+      
 
 
 
